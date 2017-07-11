@@ -1,0 +1,62 @@
+C51 COMPILER V9.55   GAIN                                                                  05/23/2017 20:58:03 PAGE 1   
+
+
+C51 COMPILER V9.55, COMPILATION OF MODULE GAIN
+OBJECT MODULE PLACED IN ..\OBJ\gain.obj
+COMPILER INVOKED BY: G:\STM32\install\C51\BIN\C51.EXE ..\USER\gain.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.
+                    -\Listings\gain.lst) TABS(3) OBJECT(..\OBJ\gain.obj)
+
+line level    source
+
+   1          #include "config.h"
+   2          
+   3          void setGain(u16 ch){
+   4   1         
+   5   1         switch(ch){
+   6   2            case 0 : {//选中通道1 (放大一倍)
+   7   3               Gain1A  = 0;// 1倍
+   8   3               Gain1B  = 0;
+   9   3         
+  10   3               Gain2A  = 0; //1倍
+  11   3               Gain2B  = 0;
+  12   3            }break;
+  13   2               
+  14   2            case 1 : { //选中通道2 (放大10倍)
+  15   3               Gain1A  = 1; //10倍
+  16   3               Gain1B  = 0;
+  17   3         
+  18   3               Gain2A  = 0;//1倍
+  19   3               Gain2B  = 0;
+  20   3            }break;
+  21   2            case 2 : { //选中通道3 (放大100倍)
+  22   3               Gain1A  = 1;//10倍
+  23   3               Gain1B  = 0;
+  24   3         
+  25   3               Gain2A  = 1;//10倍
+  26   3               Gain2B  = 0;
+  27   3            }break;
+  28   2            case 3 : {//选中通道4 (放大500倍)
+  29   3               Gain1A  = 0;//25倍
+  30   3               Gain1B  = 1;
+  31   3         
+  32   3               Gain2A  = 0; //20倍
+  33   3               Gain2B  = 1;
+  34   3            }break;
+  35   2            default :
+  36   2               break;
+  37   2         }
+  38   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     48    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
